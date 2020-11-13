@@ -9,7 +9,12 @@ const UseEffectBasics = () => {
           document.title= `New Messages(${value})`
 
     }
-  })
+  },[value])
+  
+  // to run only on the first render
+  useEffect(() => {
+    console.log('runs only on first render')
+  }, [])
 
   return <>
   <h1>{value}</h1>
